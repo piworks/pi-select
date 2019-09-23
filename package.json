@@ -1,13 +1,15 @@
 {
   "name": "@piworks/pi-select",
   "main": "./index.js",
+ 	"description": "Fork for ui-select",
   "author": "https://github.com/piworks/pi-select/graphs/contributors",
   "homepage": "https://github.com/piworks/pi-select",
   "repository": {
+    "type": "git",
     "url": "https://github.com/piworks/pi-select.git"
   },
   "style": "dist/select.css",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
