@@ -1,15 +1,16 @@
 {
   "name": "@piworks/pi-select",
   "main": "./index.js",
-  "author": "http://github.com/angular-ui/ui-select/graphs/contributors",
-  "homepage": "http://github.com/angular-ui/ui-select",
+  "author": "https://github.com/piworks/pi-select/graphs/contributors",
+  "homepage": "https://github.com/piworks/pi-select",
   "repository": {
-    "url": "git://github.com/angular-ui/ui-select.git"
+    "url": "https://github.com/piworks/pi-select.git"
   },
   "style": "dist/select.css",
   "version": "1.0.2",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "devDependencies": {
     "angular": "^1.2.18",
