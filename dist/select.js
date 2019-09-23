@@ -1854,8 +1854,8 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
             // remove the first element, if it has the `isTag` prop we generate a new one with each keyup, shaving the previous
             if ( items.length > 0 && tagItem ) {
               hasTag = true;
-              items = items.slice(1,items.length);
-              stashArr = stashArr.slice(1,stashArr.length);
+              items = items.slice(tagItems.length, items.length);
+              stashArr = stashArr.slice(tagItems.length, stashArr.length);
             }
             var tagResult = $select.tagging.fct($select.search);
             if (!Array.isArray(tagResult)) {
@@ -1894,8 +1894,8 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
             // remove existing tag item if found (should only ever be one tag item)
             if ( item !== undefined && items.length > 0 && tagItem ) {
               hasTag = true;
-              items = items.slice(1,items.length);
-              stashArr = stashArr.slice(1,stashArr.length);
+              items = items.slice(tagItems.length, items.length);
+              stashArr = stashArr.slice(tagItems.length, stashArr.length);
             }
             newItem = $select.search+' '+$select.taggingLabel;
             if ( _findApproxDupe($select.selected, $select.search) > -1 ) {
@@ -1949,7 +1949,7 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
             if ($select.isGrouped) {
               // update item references in groups, so that indexOf will work after angular.copy
               newItems.forEach(function(newItem) {
-                var itemsWithoutTag = newItem ? items.slice(1) : items;
+                var itemsWithoutTag = newItem ? items.slice(tagItems.length) : items;
                 $select.setItemsFn(itemsWithoutTag);
                 if (newItem) {
                   // add tag item as a new group
